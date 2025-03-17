@@ -6,6 +6,10 @@ services:
     stop_signal: SIGINT # This is for graceful termination, do not change it, unless you know what you are doing
     volumes:
       - './server:/server'
+      - '/config/saves:/server/Moria/Saved/SaveGamesDedicated/'
+      - '/config/MoriaServerConfig.ini:/server/MoriaServerConfig.ini'
+      - '/config/MoriaServerPermissions.ini:/server/MoriaServerPermissions.ini'
+      - '/config/MoriaServerRules.ini:/server/MoriaServerRules.ini'
       - './steam:/root/Steam'
     ports:
       - '7777:7777/udp'
